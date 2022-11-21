@@ -19,23 +19,45 @@ ul {
 }
 a {
     text-decoration: none;
+    color: #594a4e;
+}
+a:hover {
+    border-bottom: solid 2px #FED36E;
+    
 }
 img {
-    max-width: 100%; 
+    max-width: 100%;
 }
-h2, h3 {
-    padding-top: 30px; 
+h3 {
+    margin: 1.25em auto;
+}
+#portfolio, #contact {
+    padding: 30px 20px;
+}
+.bio, .col, .contact, .article p {
+    font-weight: lighter;
+}
+.bio a {
+    font-weight: normal;
+}
+.article > p {
+    padding: 1rem 0;
+}
+.contact a {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 /* ================================= 
   Base Layout Styles
 ==================================== */
-/* ---- Navigation ---- */
-
+/* ---- Header Section ---- */
 nav, .about {
-    padding: 25px;
+    margin: 25px;
     font-family: "Roboto", Arial, Verdana;
     letter-spacing: .05em;
+}
+.authorship {
+    margin:  25px 30px;
 }
 
 .main-nav {
@@ -51,36 +73,64 @@ h1, .main-nav, .about, .portfolio {
     background-color: #fff;
 }
 
-.name a, .main-nav a {
+.name a, .main-nav a, footer a {
     color: #000;
 }
 
 /* ---- Layout Containers ---- */
 .bio {
     font-size: 1.25rem;
-    font-weight: lighter;
     padding: 10px 0;
 }
 .portfolio {
     background-color: #fff;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 10%), 0 2px 4px -1px rgb(0 0 0 / 6%);
 }
 .container {
     max-width: 1100px;
-    max-width: 1100px;
-    padding: 10px;
+    padding: 20px;
     margin: 0 auto;
 }
 .col {
     letter-spacing: 1px;
-    padding: 30px;
+    padding: 30px 10px;
+}
+.article {
+    border: solid #594a4e 1px;
+    border-radius: 0.5em;
+    border-left: solid #594a4e 5px;
+    margin: 30px auto;
+    padding: 0 30px 1em;
+}
+.contact {
+    text-align: center;
+    margin: 30px 20px; 
+}
+.cta {
+    margin: 20px auto;
 }
 
-
+/* ---- Footer ---- */
+.full {
+    display: none;
+  }
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    height: 50px;
+}
 /* ================================= 
   Media Queries
 ==================================== */
 @media screen and (min-width: 768px) {
-    /* ---- Navigation ---- */
+    
+    .about img, .portfolio {
+        border-radius: 5px;
+    }
+    
+    /* ---- Header Section ---- */
     .main-nav {
         margin-top: 0;
     }
@@ -99,8 +149,7 @@ h1, .main-nav, .about, .portfolio {
     .top-nav a {
         color: #fff;
     }
-    
-    /* ---- About Section ---- */
+
     .about {
         display: flex;
         text-align: left; 
@@ -110,27 +159,37 @@ h1, .main-nav, .about, .portfolio {
         font-size: 1.25rem;
         padding: 0px 50px 0px 0px;
     }
-
     /* ---- Portfolio Section ---- */
     .portfolio {
-        margin: 25px;
+        margin: 50px 25px;
+        padding: 30px 0px;
     }
     .container {
         display: flex;
         flex-wrap: wrap;
-        align-items: center;
+        align-items: flex-start;
     }
     .col {
-    flex-basis: calc(50%);
+    flex-basis: calc(50%); /* i.e. min width of each .col div */
+    }
+    /* ---- Contact Section ---- */
+
+    /* ---- Footer Section ---- */
+    .top {
+        display: none;
+      }
+      .full {
+        display: inline-block;
+        margin-left: 20px;
     }
 }
 
 @media screen and (min-width: 1024px) {
-    /* ---- Navigation ---- */
+    /* ---- Header Section ---- */
     nav {
         display: flex;
-        justify-content: space-between; /* horizontally distribute */
-        align-items: center; /* vertically center */ 
+        justify-content: space-between; /* distribute */
+        align-items: center; /* center */ 
     }
     
     /* main-nav, 
@@ -139,11 +198,9 @@ h1, .main-nav, .about, .portfolio {
         margin-bottom: 0;
     } */
     
-    /* ---- About Section ---- */
     .bio {
         font-size: 1.5rem;
     }
-
     /* ---- Portfolio Section ---- */
     .col {
         flex-basis: calc(33.333%);
