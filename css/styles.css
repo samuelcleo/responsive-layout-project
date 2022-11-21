@@ -1,0 +1,151 @@
+/* ================================= 
+  Base Element Styles
+==================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    background: #fafafa;
+    margin: 0 auto;
+    max-width: 1024px;
+    font-family: "Roboto", Arial, Verdana;
+    font-weight: 400;
+}
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+a {
+    text-decoration: none;
+}
+img {
+    max-width: 100%; 
+}
+h2, h3 {
+    padding-top: 30px; 
+}
+
+/* ================================= 
+  Base Layout Styles
+==================================== */
+/* ---- Navigation ---- */
+
+nav, .about {
+    padding: 25px;
+    font-family: "Roboto", Arial, Verdana;
+    letter-spacing: .05em;
+}
+
+.main-nav {
+    margin-top: 30px; 
+}
+h1, .main-nav, .about, .portfolio {
+    text-align: center;    
+}
+.main-nav li {
+    width: 100%;
+    padding: 10px 0;
+    margin: 5px auto;
+    background-color: #fff;
+}
+
+.name a, .main-nav a {
+    color: #000;
+}
+
+/* ---- Layout Containers ---- */
+.bio {
+    font-size: 1.25rem;
+    font-weight: lighter;
+    padding: 10px 0;
+}
+.portfolio {
+    background-color: #fff;
+}
+.container {
+    max-width: 1100px;
+    max-width: 1100px;
+    padding: 10px;
+    margin: 0 auto;
+}
+.col {
+    letter-spacing: 1px;
+    padding: 30px;
+}
+
+
+/* ================================= 
+  Media Queries
+==================================== */
+@media screen and (min-width: 768px) {
+    /* ---- Navigation ---- */
+    .main-nav {
+        margin-top: 0;
+    }
+    
+    .main-nav li {
+        /* display the nav in a row instead of a column */
+        display: inline-block; 
+        width: auto;
+        /* add separation */
+        margin-right: 15px; 
+        background-color: transparent;
+    }
+    .top-nav li:last-child {
+        margin-right: 0;
+    }
+    .top-nav a {
+        color: #fff;
+    }
+    
+    /* ---- About Section ---- */
+    .about {
+        display: flex;
+        text-align: left; 
+    }
+    .bio {
+        order: -1;
+        font-size: 1.25rem;
+        padding: 0px 50px 0px 0px;
+    }
+
+    /* ---- Portfolio Section ---- */
+    .portfolio {
+        margin: 25px;
+    }
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+    .col {
+    flex-basis: calc(50%);
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    /* ---- Navigation ---- */
+    nav {
+        display: flex;
+        justify-content: space-between; /* horizontally distribute */
+        align-items: center; /* vertically center */ 
+    }
+    
+    /* main-nav, 
+    .main-nav li {
+        width: initial;
+        margin-bottom: 0;
+    } */
+    
+    /* ---- About Section ---- */
+    .bio {
+        font-size: 1.5rem;
+    }
+
+    /* ---- Portfolio Section ---- */
+    .col {
+        flex-basis: calc(33.333%);
+    }
+}
