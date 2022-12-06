@@ -1,1 +1,1 @@
-# The earnest beginnings of a new skillset added to the entrepreur toolkit.
+# The earnest beginnings of a new skillset added to the entrepreneur toolkit.
